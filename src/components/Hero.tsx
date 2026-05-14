@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import {animate, createDrawable, scrambleText, stagger} from 'animejs';
 import type {JSAnimation} from 'animejs';
 import {ArrowRight, Briefcase, Paintbrush, Shield, Video, Zap} from 'lucide-react';
-import {brand} from '../data/siteContent';
+import {brand, contact} from '../data/siteContent';
 
 function HeadlineLetters({text}: {text: string}) {
   const sanitized = text
@@ -373,7 +373,7 @@ export default function Hero() {
               </p>
               <div
                 data-hero-line
-                className="mt-10 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start will-change-transform"
+                className="mt-10 flex flex-col sm:flex-row flex-wrap gap-4 justify-center lg:justify-start will-change-transform"
               >
                 <Link
                   to="/work"
@@ -390,37 +390,17 @@ export default function Hero() {
                 >
                   Meet Fatima
                 </a>
+                <Link
+                  to={contact.homeHash}
+                  className="inline-flex justify-center border border-[#006D77]/35 text-[#0a4d52] px-10 py-4 rounded-xl font-semibold bg-white/80 hover:bg-white transition-all active:scale-[0.98]"
+                >
+                  Get in touch
+                </Link>
               </div>
             </div>
 
-            <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
+            <div className="order-1 lg:order-2 flex w-full flex-col items-center lg:items-end">
               <div className="relative w-full max-w-md">
-                <div
-                  ref={floatTopRef}
-                  className="hidden lg:flex absolute -top-5 -right-4 z-20 items-center gap-3 rounded-2xl border border-white/60 bg-white/90 px-4 py-3 shadow-xl backdrop-blur-md will-change-transform"
-                >
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-tertiary-container">
-                    <Zap className="h-5 w-5 text-tertiary" />
-                  </div>
-                  <div>
-                    <p className="text-[9px] font-bold uppercase tracking-widest text-tertiary">Operations</p>
-                    <p className="text-xs font-semibold text-on-surface">Calm, documented handoffs</p>
-                  </div>
-                </div>
-
-                <div
-                  ref={floatBottomRef}
-                  className="hidden lg:flex absolute -bottom-5 -left-4 z-20 items-center gap-3 rounded-2xl border border-white/60 bg-white/90 px-4 py-3 shadow-xl backdrop-blur-md will-change-transform"
-                >
-                  <div className="flex h-11 w-11 items-center justify-center rounded-full bg-primary-container">
-                    <Shield className="h-5 w-5 text-primary" />
-                  </div>
-                  <div>
-                    <p className="text-[9px] font-bold uppercase tracking-widest text-primary">Trust</p>
-                    <p className="text-xs font-semibold text-on-surface">Corporate-grade follow-through</p>
-                  </div>
-                </div>
-
                 <div className="absolute -inset-1 rounded-[1.75rem] bg-gradient-to-tr from-[#006D77]/25 to-tertiary/20 blur-xl opacity-80" />
                 <div
                   ref={orbitRingRef}
@@ -485,6 +465,34 @@ export default function Hero() {
                     <p className="text-center text-[10px] uppercase tracking-widest text-white/55">
                       Systems · clarity · follow-through
                     </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-6 flex w-full max-w-md flex-col gap-3 sm:mt-7 sm:flex-row sm:gap-4">
+                <div
+                  ref={floatTopRef}
+                  className="flex min-w-0 flex-1 items-center gap-3 rounded-2xl border border-white/60 bg-white/90 px-4 py-3 shadow-lg backdrop-blur-md will-change-transform"
+                >
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-tertiary-container">
+                    <Zap className="h-5 w-5 text-tertiary" />
+                  </div>
+                  <div className="min-w-0">
+                    <p className="text-[9px] font-bold uppercase tracking-widest text-tertiary">Operations</p>
+                    <p className="text-xs font-semibold leading-snug text-on-surface">Calm, documented handoffs</p>
+                  </div>
+                </div>
+
+                <div
+                  ref={floatBottomRef}
+                  className="flex min-w-0 flex-1 items-center gap-3 rounded-2xl border border-white/60 bg-white/90 px-4 py-3 shadow-lg backdrop-blur-md will-change-transform"
+                >
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-primary-container">
+                    <Shield className="h-5 w-5 text-primary" />
+                  </div>
+                  <div className="min-w-0">
+                    <p className="text-[9px] font-bold uppercase tracking-widest text-primary">Trust</p>
+                    <p className="text-xs font-semibold leading-snug text-on-surface">Corporate-grade follow-through</p>
                   </div>
                 </div>
               </div>

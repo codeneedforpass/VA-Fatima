@@ -6,6 +6,14 @@ export const brand = {
   email: 'mailto:yourvafatimafrancisco@gmail.com',
 } as const;
 
+/** Shared contact targets for nav, footer, FAB, and CTAs. */
+export const contact = {
+  homeHash: '/#contact',
+  linkedin: 'https://www.linkedin.com/',
+  facebook: 'https://www.facebook.com/groups/873407572176398',
+  onlineJobs: 'https://www.onlinejobs.ph/',
+} as const;
+
 export const about = {
   headline: 'About me',
   paragraphs: [

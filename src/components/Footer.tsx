@@ -1,5 +1,5 @@
 import {Link} from 'react-router-dom';
-import {brand} from '../data/siteContent';
+import {brand, contact} from '../data/siteContent';
 import {useAnimeOnReveal} from '../hooks/useAnimeOnReveal';
 
 export default function Footer() {
@@ -7,9 +7,9 @@ export default function Footer() {
   const revealRef = useAnimeOnReveal({preset: 'drift', staggerMs: 55});
 
   const socialLinks = [
-    {name: 'LinkedIn', href: 'https://www.linkedin.com/', external: true},
-    {name: 'Facebook', href: 'https://www.facebook.com/groups/873407572176398', external: true},
-    {name: 'OnlineJobs.ph', href: '#', external: false},
+    {name: 'LinkedIn', href: contact.linkedin, external: true},
+    {name: 'Facebook', href: contact.facebook, external: true},
+    {name: 'OnlineJobs.ph', href: contact.onlineJobs, external: true},
     {name: 'Email', href: brand.email, external: false},
   ] as const;
 
@@ -26,12 +26,26 @@ export default function Footer() {
           <div className="text-sm font-medium text-on-surface-variant opacity-60 mt-1">
             © {currentYear} {brand.name}. All rights reserved.
           </div>
-          <Link
-            to="/work"
-            className="mt-4 text-sm font-semibold text-tertiary hover:text-primary transition-colors underline-offset-4 hover:underline"
-          >
-            Work samples hub →
-          </Link>
+          <div className="mt-4 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 md:justify-start">
+            <Link
+              to="/work"
+              className="text-sm font-semibold text-tertiary hover:text-primary transition-colors underline-offset-4 hover:underline"
+            >
+              Work samples hub →
+            </Link>
+            <Link
+              to={contact.homeHash}
+              className="text-sm font-semibold text-tertiary hover:text-primary transition-colors underline-offset-4 hover:underline"
+            >
+              Contact
+            </Link>
+            <a
+              href={brand.email}
+              className="text-sm font-semibold text-tertiary hover:text-primary transition-colors underline-offset-4 hover:underline"
+            >
+              Email
+            </a>
+          </div>
         </div>
 
         <div className="flex flex-wrap justify-center gap-8 md:gap-12" data-anime>

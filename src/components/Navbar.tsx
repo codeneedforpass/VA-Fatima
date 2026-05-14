@@ -3,7 +3,7 @@ import {Link, useLocation} from 'react-router-dom';
 import {animate, stagger} from 'animejs';
 import type {JSAnimation} from 'animejs';
 import {Menu, X} from 'lucide-react';
-import {brand} from '../data/siteContent';
+import {brand, contact} from '../data/siteContent';
 
 type NavItem = {name: string; to: string};
 
@@ -15,7 +15,7 @@ const navItems: NavItem[] = [
   {name: 'Approach', to: '/#approach'},
   {name: 'Testimonials', to: '/#testimonials'},
   {name: 'Services', to: '/#services'},
-  {name: 'Contact', to: '/#contact'},
+  {name: 'Contact', to: contact.homeHash},
 ];
 
 export default function Navbar() {

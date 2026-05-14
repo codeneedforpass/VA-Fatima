@@ -16,6 +16,7 @@ import Footer from '../components/Footer';
 import FAB from '../components/FAB';
 import MediaLightbox from '../components/MediaLightbox';
 import {publicAssetUrl} from '../lib/publicAsset';
+import {brand, contact} from '../data/siteContent';
 import {
   customerServicePdf,
   eaSamples,
@@ -196,13 +197,25 @@ export default function WorkSamplesPage() {
                 </a>
               ))}
             </div>
-            <div data-anime-mount className="mt-10">
+            <div data-anime-mount className="mt-10 flex flex-wrap justify-center gap-x-6 gap-y-2">
               <Link
                 to="/#portfolio"
                 className="text-sm font-semibold text-primary hover:underline underline-offset-4"
               >
                 ← Back to main site
               </Link>
+              <Link
+                to={contact.homeHash}
+                className="text-sm font-semibold text-primary hover:underline underline-offset-4"
+              >
+                Contact
+              </Link>
+              <a
+                href={brand.email}
+                className="text-sm font-semibold text-primary hover:underline underline-offset-4"
+              >
+                Email
+              </a>
             </div>
           </div>
         </section>

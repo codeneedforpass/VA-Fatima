@@ -1,7 +1,8 @@
 import {useEffect, useRef} from 'react';
+import {Link} from 'react-router-dom';
 import {animate, stagger} from 'animejs';
 import type {JSAnimation} from 'animejs';
-import {approach} from '../data/siteContent';
+import {approach, brand, contact} from '../data/siteContent';
 
 /**
  * Precision process: stats + steps (Anime), SVG path draw driven by scroll + pointer position.
@@ -180,6 +181,18 @@ export default function ProcessTimeline({sectionId}: {sectionId?: string}) {
             </span>
           </div>
         </div>
+
+        <p className="mt-14 text-center text-sm text-on-surface-variant">
+          <Link to={contact.homeHash} className="font-semibold text-primary underline-offset-4 hover:underline">
+            Contact
+          </Link>
+          <span className="mx-2 text-on-surface-variant/40" aria-hidden>
+            ·
+          </span>
+          <a href={brand.email} className="font-semibold text-primary underline-offset-4 hover:underline">
+            Email
+          </a>
+        </p>
       </div>
     </section>
   );

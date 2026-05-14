@@ -1,4 +1,5 @@
-import {about, brand} from '../data/siteContent';
+import {Link} from 'react-router-dom';
+import {about, brand, contact} from '../data/siteContent';
 import {useAnimeOnReveal} from '../hooks/useAnimeOnReveal';
 
 export default function AboutSection() {
@@ -55,6 +56,20 @@ export default function AboutSection() {
             >
               {about.quote}
             </blockquote>
+            <p data-anime className="mt-8 text-sm text-on-surface-variant">
+              <Link
+                to={contact.homeHash}
+                className="font-semibold text-primary underline-offset-4 hover:underline"
+              >
+                Contact
+              </Link>
+              <span className="mx-2 text-on-surface-variant/50" aria-hidden>
+                ·
+              </span>
+              <a href={brand.email} className="font-semibold text-primary underline-offset-4 hover:underline">
+                Email
+              </a>
+            </p>
           </div>
         </div>
       </div>

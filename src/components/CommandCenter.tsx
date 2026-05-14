@@ -1,7 +1,7 @@
 import {useRef} from 'react';
 import {Building2, Laptop, ShieldCheck, Sparkles} from 'lucide-react';
 import {Link} from 'react-router-dom';
-import {impactMetrics} from '../data/siteContent';
+import {impactMetrics, contact, brand} from '../data/siteContent';
 import {useAnimeMeter, useAnimeOnReveal} from '../hooks/useAnimeOnReveal';
 
 export default function CommandCenter() {
@@ -109,6 +109,14 @@ export default function CommandCenter() {
               <Link to="/work" className="font-semibold text-tertiary-fixed underline-offset-4 hover:underline">
                 work hub
               </Link>
+              .               When you are ready to talk scope, use{' '}
+              <Link to={contact.homeHash} className="font-semibold text-tertiary-fixed underline-offset-4 hover:underline">
+                Contact
+              </Link>{' '}
+              or{' '}
+              <a href={brand.email} className="font-semibold text-tertiary-fixed underline-offset-4 hover:underline">
+                email directly
+              </a>
               .
             </p>
             <div className="flex flex-wrap gap-6">

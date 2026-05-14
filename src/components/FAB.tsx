@@ -1,7 +1,29 @@
 import {useState, useEffect, useRef} from 'react';
 import {animate, stagger} from 'animejs';
 import type {JSAnimation} from 'animejs';
-import {MessageCircle, Briefcase, ExternalLink} from 'lucide-react';
+import {Facebook, Linkedin, Mail, MessageCircle} from 'lucide-react';
+import {brand, contact} from '../data/siteContent';
+
+const fabLinks = [
+  {
+    label: 'Facebook',
+    href: contact.facebook,
+    Icon: Facebook,
+    external: true,
+  },
+  {
+    label: 'LinkedIn',
+    href: contact.linkedin,
+    Icon: Linkedin,
+    external: true,
+  },
+  {
+    label: 'Email',
+    href: brand.email,
+    Icon: Mail,
+    external: false,
+  },
+] as const;
 
 export default function FAB() {
   const [isOpen, setIsOpen] = useState(false);
@@ -47,22 +69,18 @@ export default function FAB() {
     <div className="fixed bottom-8 right-8 z-[100] flex flex-col items-end gap-4">
       {showLinks && (
         <div ref={linksWrapRef} className="flex flex-col items-end gap-3 mb-2">
-          <a
-            data-fab-link
-            href="#"
-            className="bg-surface-container-highest px-6 py-3 rounded-full shadow-xl border border-on-surface/5 text-on-surface text-sm font-semibold flex items-center gap-2 hover:bg-white whitespace-nowrap transition-all hover:-translate-x-0.5"
-          >
-            <Briefcase className="w-4 h-4 text-primary" />
-            Hire on OnlineJobs.ph
-          </a>
-          <a
-            data-fab-link
-            href="#"
-            className="bg-surface-container-highest px-6 py-3 rounded-full shadow-xl border border-on-surface/5 text-on-surface text-sm font-semibold flex items-center gap-2 hover:bg-white whitespace-nowrap transition-all hover:-translate-x-0.5"
-          >
-            <ExternalLink className="w-4 h-4 text-primary" />
-            Message on Upwork
-          </a>
+          {fabLinks.map(({label, href, Icon, external}) => (
+            <a
+              key={label}
+              data-fab-link
+              href={href}
+              {...(external ? {target: '_blank', rel: 'noopener noreferrer'} : {})}
+              className="bg-surface-container-highest px-6 py-3 rounded-full shadow-xl border border-on-surface/5 text-on-surface text-sm font-semibold flex items-center gap-2 hover:bg-white whitespace-nowrap transition-all hover:-translate-x-0.5"
+            >
+              <Icon className="h-4 w-4 shrink-0 text-primary" aria-hidden />
+              {label}
+            </a>
+          ))}
         </div>
       )}
 

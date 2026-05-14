@@ -1,4 +1,5 @@
-import {testimonials} from '../data/siteContent';
+import {Link} from 'react-router-dom';
+import {testimonials, brand, contact} from '../data/siteContent';
 import {useAnimeOnReveal} from '../hooks/useAnimeOnReveal';
 
 export default function TestimonialsSection() {
@@ -37,6 +38,26 @@ export default function TestimonialsSection() {
               </footer>
             </article>
           ))}
+        </div>
+
+        <div className="mt-16 max-w-2xl mx-auto text-center" data-anime>
+          <p className="text-lg text-on-surface-variant leading-relaxed mb-6">
+            Interested in working together? Reach the contact block for social links, or send a message directly.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link
+              to={contact.homeHash}
+              className="inline-flex items-center justify-center rounded-xl bg-primary px-8 py-3.5 text-sm font-semibold text-on-primary transition-opacity hover:opacity-90 active:scale-[0.98]"
+            >
+              Contact
+            </Link>
+            <a
+              href={brand.email}
+              className="inline-flex items-center justify-center rounded-xl border-2 border-primary px-8 py-3.5 text-sm font-semibold text-primary transition-colors hover:bg-primary/5 active:scale-[0.98]"
+            >
+              Email Fatima
+            </a>
+          </div>
         </div>
       </div>
     </section>

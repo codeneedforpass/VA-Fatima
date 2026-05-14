@@ -10,7 +10,7 @@ import {
   Video,
 } from 'lucide-react';
 import {publicAssetUrl} from '../lib/publicAsset';
-import {servicesOffered} from '../data/siteContent';
+import {servicesOffered, contact} from '../data/siteContent';
 import {useAnimeOnReveal} from '../hooks/useAnimeOnReveal';
 
 const adminPreview = publicAssetUrl([
@@ -205,12 +205,20 @@ export default function ServiceEcosystem() {
                 — organized in the work hub so nothing is buried in attachments.
               </p>
             </div>
-            <Link
-              to="/work"
-              className="shrink-0 inline-flex items-center justify-center bg-white text-tertiary px-8 py-4 rounded-xl font-bold hover:bg-tertiary-fixed transition-all hover:scale-[1.02] active:scale-95 shadow-lg"
-            >
-              Browse the work hub
-            </Link>
+            <div className="flex shrink-0 flex-col gap-3 sm:flex-row sm:items-center">
+              <Link
+                to="/work"
+                className="inline-flex items-center justify-center bg-white text-tertiary px-8 py-4 rounded-xl font-bold hover:bg-tertiary-fixed transition-all hover:scale-[1.02] active:scale-95 shadow-lg"
+              >
+                Browse the work hub
+              </Link>
+              <Link
+                to={contact.homeHash}
+                className="inline-flex items-center justify-center border-2 border-white/80 bg-transparent px-8 py-4 rounded-xl font-bold text-white hover:bg-white/10 transition-all hover:scale-[1.02] active:scale-95"
+              >
+                Get in touch
+              </Link>
+            </div>
           </div>
           <div className="absolute -right-16 -bottom-16 opacity-10 group-hover:rotate-12 group-hover:scale-110 transition-transform duration-1000 ease-in-out pointer-events-none">
             <div className="eco-float-icon">
