@@ -5,7 +5,11 @@ export default function ExperienceSection() {
   const revealRef = useAnimeOnReveal({preset: 'lift', staggerMs: 64});
 
   return (
-    <section id="experience" ref={revealRef} className="scroll-mt-28 bg-inverse-surface text-inverse-on-surface">
+    <section
+      id="experience"
+      ref={revealRef}
+      className="scroll-mt-28 border-t border-on-surface/10 bg-inverse-surface text-inverse-on-surface"
+    >
       <div className="max-w-7xl mx-auto px-6 py-24">
         <div className="max-w-2xl mb-14">
           <span className="text-[11px] font-bold text-tertiary-fixed uppercase tracking-[0.28em]" data-anime>

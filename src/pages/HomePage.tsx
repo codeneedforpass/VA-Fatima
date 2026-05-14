@@ -31,7 +31,7 @@ export default function HomePage() {
 
         <ExperienceSection />
 
-        <section id="portfolio" className="relative">
+        <section id="portfolio" className="relative scroll-mt-28 border-t border-on-surface/5 bg-surface">
           <CommandCenter />
         </section>
 
@@ -39,7 +39,7 @@ export default function HomePage() {
 
         <TestimonialsSection />
 
-        <section id="services">
+        <section id="services" className="scroll-mt-28 border-t border-on-surface/5 bg-surface-container-high/80">
           <ServiceEcosystem />
         </section>
       </main>

@@ -7,11 +7,11 @@ export default function Footer() {
   const revealRef = useAnimeOnReveal({preset: 'drift', staggerMs: 55});
 
   const socialLinks = [
-    {name: 'LinkedIn', href: '#'},
-    {name: 'Upwork', href: '#'},
-    {name: 'OnlineJobs.ph', href: '#'},
-    {name: 'Email', href: brand.email},
-  ];
+    {name: 'LinkedIn', href: 'https://www.linkedin.com/', external: true},
+    {name: 'Facebook', href: 'https://www.facebook.com/groups/873407572176398', external: true},
+    {name: 'OnlineJobs.ph', href: '#', external: false},
+    {name: 'Email', href: brand.email, external: false},
+  ] as const;
 
   return (
     <footer
@@ -39,6 +39,7 @@ export default function Footer() {
             <a
               key={link.name}
               href={link.href}
+              {...(link.external ? {target: '_blank', rel: 'noopener noreferrer'} : {})}
               className="text-sm font-semibold text-on-surface-variant hover:text-primary transition-all relative group"
             >
               {link.name}

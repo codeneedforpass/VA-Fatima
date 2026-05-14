@@ -3,7 +3,7 @@ export const brand = {
   title: 'Freelance Virtual Assistant',
   tagline:
     'Corporate-grade discipline with remote-first flexibility — admin, creative, and customer operations for founders and small teams.',
-  email: 'mailto:hello@fatimafrancisco.com',
+  email: 'mailto:yourvafatimafrancisco@gmail.com',
 } as const;
 
 export const about = {

@@ -294,7 +294,7 @@ export default function Hero() {
   return (
     <section
       ref={rootRef}
-      className="relative flex min-h-[min(90vh,920px)] w-full flex-col overflow-hidden px-0"
+      className="relative flex min-h-[min(90vh,920px)] w-full flex-col overflow-hidden bg-surface-bright px-0"
     >
       <div
         ref={blobARef}

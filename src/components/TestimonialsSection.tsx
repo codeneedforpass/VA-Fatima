@@ -5,7 +5,11 @@ export default function TestimonialsSection() {
   const revealRef = useAnimeOnReveal({preset: 'settle', staggerMs: 62});
 
   return (
-    <section id="testimonials" ref={revealRef} className="scroll-mt-28 border-t border-on-surface/5 bg-surface-container-low/40">
+    <section
+      id="testimonials"
+      ref={revealRef}
+      className="scroll-mt-28 border-t border-on-surface/5 bg-secondary-fixed/35"
+    >
       <div className="max-w-7xl mx-auto px-6 py-24">
         <div className="max-w-3xl mb-14">
           <span className="text-[11px] font-bold text-tertiary uppercase tracking-[0.28em]" data-anime>

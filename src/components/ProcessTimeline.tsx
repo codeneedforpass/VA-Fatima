@@ -107,11 +107,11 @@ export default function ProcessTimeline({sectionId}: {sectionId?: string}) {
     <section
       id={sectionId}
       ref={wrapRef}
-      className={`py-20 md:py-24 bg-surface px-6 overflow-hidden border-b border-on-surface/5${sectionId ? ' scroll-mt-28' : ''}`}
+      className={`py-20 md:py-24 bg-surface-variant/55 px-6 overflow-hidden border-y border-on-surface/5${sectionId ? ' scroll-mt-28' : ''}`}
     >
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16 md:mb-20">
-          <span className="text-[10px] font-bold text-primary uppercase tracking-[0.3em] mb-4 block">
+          <span className="text-[10px] font-bold text-tertiary uppercase tracking-[0.3em] mb-4 block">
             How work flows
           </span>
           <h2 className="text-3xl md:text-5xl font-serif font-semibold text-on-surface">Precision process</h2>
@@ -130,7 +130,7 @@ export default function ProcessTimeline({sectionId}: {sectionId?: string}) {
               fill="none"
               stroke="currentColor"
               strokeWidth="2"
-              className="text-primary"
+              className="text-tertiary/40"
             />
           </svg>
 
@@ -141,7 +141,7 @@ export default function ProcessTimeline({sectionId}: {sectionId?: string}) {
                 data-timeline-step
                 className="flex flex-col items-center text-center group opacity-0"
               >
-                <div className="w-16 h-16 rounded-3xl bg-white shadow-xl flex items-center justify-center mb-6 border border-on-surface/5 group-hover:bg-primary group-hover:text-white transition-all duration-500 scale-100 group-hover:scale-110">
+                <div className="w-16 h-16 rounded-3xl bg-surface-container-lowest shadow-xl flex items-center justify-center mb-6 border border-on-surface/8 text-on-surface group-hover:bg-tertiary group-hover:border-tertiary group-hover:text-white transition-all duration-500 scale-100 group-hover:scale-110">
                   <span className="font-serif font-bold text-2xl">{i + 1}</span>
                 </div>
                 <h3 className="text-xl font-serif font-semibold mb-3">{step.title}</h3>
@@ -153,7 +153,7 @@ export default function ProcessTimeline({sectionId}: {sectionId?: string}) {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 pt-12 border-t border-on-surface/5">
           <div className="bg-surface-container-lowest p-8 md:p-10 rounded-[2rem] shadow-sm border border-on-surface/5 flex flex-col items-center">
-            <span ref={statYearsRef} className="text-4xl md:text-5xl font-serif font-bold text-primary mb-2 tabular-nums">
+            <span ref={statYearsRef} className="text-4xl md:text-5xl font-serif font-bold text-tertiary mb-2 tabular-nums">
               0+
             </span>
             <span className="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest text-center">
@@ -161,7 +161,7 @@ export default function ProcessTimeline({sectionId}: {sectionId?: string}) {
             </span>
           </div>
           <div className="bg-surface-container-lowest p-8 md:p-10 rounded-[2rem] shadow-sm border border-on-surface/5 flex flex-col items-center">
-            <span ref={statRemoteRef} className="text-4xl md:text-5xl font-serif font-bold text-primary mb-2 tabular-nums">
+            <span ref={statRemoteRef} className="text-4xl md:text-5xl font-serif font-bold text-tertiary mb-2 tabular-nums">
               0+
             </span>
             <span className="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest text-center">
@@ -171,7 +171,7 @@ export default function ProcessTimeline({sectionId}: {sectionId?: string}) {
           <div className="bg-surface-container-lowest p-8 md:p-10 rounded-[2rem] shadow-sm border border-on-surface/5 flex flex-col items-center">
             <span
               ref={statReliabilityRef}
-              className="text-4xl md:text-5xl font-serif font-bold text-primary mb-2 tabular-nums"
+              className="text-4xl md:text-5xl font-serif font-bold text-tertiary mb-2 tabular-nums"
             >
               0%
             </span>

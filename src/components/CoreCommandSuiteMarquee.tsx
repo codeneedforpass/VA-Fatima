@@ -67,7 +67,7 @@ export default function CoreCommandSuiteMarquee() {
     <section
       ref={sectionRef}
       id="command-suite"
-      className="relative z-10 border-y border-on-surface/8 bg-surface-container-low/70 py-8 backdrop-blur-md"
+      className="relative z-10 border-y border-on-surface/8 bg-surface-container py-8 backdrop-blur-md"
     >
       <div className="mx-auto mb-5 max-w-7xl px-6 text-center">
         <span className="text-[10px] font-bold uppercase tracking-[0.32em] text-tertiary">Core command suite</span>
