@@ -4,6 +4,7 @@ import {animate, stagger} from 'animejs';
 import type {JSAnimation} from 'animejs';
 import {Menu, X} from 'lucide-react';
 import {brand, contact} from '../data/siteContent';
+import SiteLogo from './SiteLogo';
 
 type NavItem = {name: string; to: string};
 
@@ -91,9 +92,10 @@ export default function Navbar() {
       <nav className="flex justify-between items-center px-4 sm:px-8 max-w-7xl mx-auto gap-4">
         <Link
           to="/"
-          className="text-lg sm:text-xl font-serif font-bold tracking-tight text-on-surface hover:text-primary transition-colors shrink-0"
+          className="flex items-center gap-2.5 sm:gap-3 shrink-0 text-on-surface hover:text-primary transition-colors group"
         >
-          {brand.name}
+          <SiteLogo className="h-9 w-9 sm:h-10 sm:w-10 ring-1 ring-on-surface/10 shadow-sm group-hover:ring-primary/30" />
+          <span className="text-lg sm:text-xl font-serif font-bold tracking-tight">{brand.name}</span>
         </Link>
 
         <div className="hidden lg:flex flex-wrap justify-end gap-x-5 gap-y-2 items-center">

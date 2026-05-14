@@ -1,6 +1,7 @@
 import {Link} from 'react-router-dom';
 import {brand, contact} from '../data/siteContent';
 import {useAnimeOnReveal} from '../hooks/useAnimeOnReveal';
+import SiteLogo from './SiteLogo';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -21,7 +22,13 @@ export default function Footer() {
     >
       <div className="flex flex-col md:flex-row justify-between items-center px-8 max-w-7xl mx-auto gap-12">
         <div className="flex flex-col items-center md:items-start text-center md:text-left" data-anime>
-          <div className="text-2xl font-serif font-bold text-primary mb-3">{brand.name}</div>
+          <Link
+            to="/"
+            className="mb-3 flex items-center justify-center gap-3 md:justify-start text-primary transition-opacity hover:opacity-90"
+          >
+            <SiteLogo className="h-11 w-11 ring-1 ring-on-surface/10 shadow-sm" />
+            <span className="text-2xl font-serif font-bold">{brand.name}</span>
+          </Link>
           <div className="text-sm font-medium text-on-surface-variant opacity-80">{brand.title}</div>
           <div className="text-sm font-medium text-on-surface-variant opacity-60 mt-1">
             © {currentYear} {brand.name}. All rights reserved.
